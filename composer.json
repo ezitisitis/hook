@@ -1,0 +1,28 @@
+{
+    "name": "ezitis/hook",
+    "description": "Laravel control inside of Docker container",
+    "keywords": ["laravel", "docker"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ezitis",
+            "email": "git@ezitisitis.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^8",
+        "illuminate/contracts": "^8",
+        "ezitis/docker-compose-laravel": "^1.0"
+    },
+    "bin":[
+        "bin/hook"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ezitis\\Hook\\": "src/"
+        }
+    }
+}
