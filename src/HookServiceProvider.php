@@ -4,7 +4,6 @@ namespace Ezitis\Hook;
 
 use Ezitis\Hook\Console\ListServicesCommand;
 use Illuminate\Contracts\Support\DeferrableProvider;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
 
 class HookServiceProvider extends ServiceProvider implements DeferrableProvider
