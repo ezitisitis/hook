@@ -13,36 +13,33 @@ class HookServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        if ($this->app->runningInConsole()) {
-            $this->registerCommands();
-            $this->configurePublishing();
-        }
+        $this->registerCommands();
     }
 
     /**
-     * Register the console commands for the package.
-     *
-     * hook:install should copy files from ezitis/laravel-docker
-     *
      * @return void
      */
-    protected function registerCommands()
+    protected function registerCommands(): void
     {
-
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                ListServicesCommand::class
+            ]);
+        }
     }
 
-    protected function configurePublishing()
-    {
 
-    }
-
-    public function provides()
+    /**
+     * Get the services provided
+     *
+     * @return array
+     */
+    public function provides(): array
     {
         return [
-            'hook.install-command',
-            'hook.publish-command'
+            ListServicesCommand::class
         ];
     }
 }
